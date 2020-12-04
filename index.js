@@ -1,3 +1,4 @@
+const { buildExampleHandler } = require("./handlers/example-handler");
 /**
  * Background Cloud Function to be triggered by Pub/Sub.
  * This function is exported by index.js, and executed when
@@ -6,10 +7,5 @@
  * @param {object} message The Pub/Sub message.
  * @param {object} context The event metadata.
  */
-exports.helloPubSub = (message, context) => {
-  const name = message.data
-      ? Buffer.from(message.data, 'base64').toString()
-      : 'World';
-
-  console.log(`Hello, ${name}!`);
-};
+const helloPubSub = buildExampleHandler();
+exports.helloPubSub = helloPubSub;
