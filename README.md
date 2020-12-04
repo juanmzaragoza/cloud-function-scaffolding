@@ -18,4 +18,9 @@ Go to testing tab on the cloud function and in Triggering event paste:
 ```
 
 ### Testing locally
-__
+
+In the console run
+```
+npm rum start:pubsub
+```
+and go to `http://localhost:8080/`
